@@ -1,20 +1,22 @@
 <template>
-<div>
-  <h1>Crea una nueva tarea</h1>
+<div class="m-4">
+  <h3>Crea una nueva tarea</h3>
 
-  <div class="input-control">
-    <label for="">Tarea</label>
-    <input 
+  <div class="input-control d-flex p-2 l-2">
+    
+    <label class="fs-4">Tarea  </label>
+    <span class="fs-4">-</span>
+    <input class="form-control r-5"
     type="text" 
     placeholder="Ingrese una nueva tarea"
     v-model="nuevaActividad">
-    <button @click="agregarNuevaActividad">Crear</button>
+    <button class="btn btn-primary" @click="agregarNuevaActividad">Crear</button>
   </div>
-    <h1>Lista</h1>
-    <ul>
-      <li v-for="(actividades, $index) in actividades" 
+    <h3>Lista</h3>
+    <ul class="list-group p-2">
+      <li class="list-group-item" v-for="(actividades, $index) in actividades" 
       :key="$index">
-      {{actividad}}
+      {{actividades}}
 
       </li> 
     </ul>
@@ -42,14 +44,11 @@ export default {
 
 <style scoped>
 input-control {
+  display: inline;
+  
 
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+};
+#body {
+  margin: 50px;
 }
 </style>
